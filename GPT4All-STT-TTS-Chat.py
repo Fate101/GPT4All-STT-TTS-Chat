@@ -3,7 +3,6 @@ from gpt4all import GPT4All
 import keyboard
 from gtts import gTTS
 import pygame
-import pyaudio
 import time
 from os import system,name
 model = None
