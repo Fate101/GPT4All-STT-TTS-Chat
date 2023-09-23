@@ -35,7 +35,7 @@ def speak_response(response_text):
     tts.save("response.mp3")
     #Give it enough time to download and save the response
     time.sleep(3)
-    pygame.mixer.init(devicename="Wave Link Aux 2 (Elgato Wave:3)") #Replace Wave Link etc with the name of your Audio Output. i.e "Headphones (Realtek...)" or clear () to make it use default device
+    pygame.mixer.init(devicename="DEVICENAMEHERE") #Replace Wave Link etc with the name of your Audio Output. i.e "Headphones (Realtek...)" or clear () to make it use default device
     pygame.mixer.music.load("response.mp3")
     pygame.mixer.music.play()
     #Wait till audio has finished playing
@@ -48,10 +48,10 @@ def main():
     global response
     if model == None:
         # Windows Default Location for models predownloaded C:\Users\{USERNAMEHERE}\.cache\gpt4all
-        model = GPT4All(model_name='orca-mini-13b.ggmlv3.q4_0.bin')
+        model = GPT4All(model_name='MODELNAMEHERE.bin')
     
     #This is where you give the AI personality or context
-    sysprompt = "Respond like you're an trivia gameshow host that specializes in Video Games. Keep it short. Only give me the next question when I ask for it."
+    sysprompt = "Respond like xyz."
     with model.chat_session(system_prompt=sysprompt):
         print("Press HOME key to start listening or Q to quit.")
         while True:
